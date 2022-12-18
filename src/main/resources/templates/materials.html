@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>magnet materials</title>
+</head>
+<body>
+You have selected <b th:text="${selectedMagnetName}">  </b> magnet
+<h1>
+    Choose material:
+</h1>
+    <ul th:each="material:${materials}">
+        <li>
+            <a  th:href="@{/order(magnetName=${selectedMagnetName}, material=${material.key})}"><span th:text="${material.key}"> </span> </a> = <span th:text="${material.value}"> </span>
+
+        </li>
+    </ul>
+
+</body>
+</html>
